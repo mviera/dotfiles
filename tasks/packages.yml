@@ -16,6 +16,9 @@
       'wget',
       'curl',
       'git',
+      'network-manager-gnome',
+      'dunst',
+      'terminator',
     ]
 
 - name: Installs terraform
