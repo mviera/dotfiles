@@ -1,6 +1,18 @@
 - hosts: localhost
   become: true
-  tasks:
-    - name: Installs htop
-      apt: name=htop
+  pre_tasks:
+    - name: update repositories
+      apt: update_cache=yes
+      changed_when: False
 
+  projects:
+    - name: powerline
+      git: https://github.com/powerline/powerline.git
+      path: 3rdparty/powerline
+
+    - name: powerline-shell
+      git: https://github.com/milkbikis/powerline-shell
+      path: 3rdparty/powerline-shell
+
+  tasks:
+    - include: tasks/packages.yml
