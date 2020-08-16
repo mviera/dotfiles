@@ -2,5 +2,5 @@
   git: repo={{ item.git }} dest={{ home }}/{{ item.path }}
   with_items:
     -
-      git: https://github.com/mviera/dotfiles
+      git: git@github.com:mviera/dotfiles.git
       path: personal/dotfiles
