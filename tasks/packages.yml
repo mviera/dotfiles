@@ -1,17 +1,17 @@
 - name: Installs packages
-  apt: name={{item}}
-  with_items:
-    - htop
-    - tmux
-    - vim-runtime
-    - vim-common
-    - vim-tiny
-    - vim-nox
-    - i3
-    - i3-wm
-    - i3lock
-    - i3status
-    - fish
-    - fish-common
-    - wget
-    - curl
+  apt:
+    name: [
+      'htop',
+      'tmux',
+      'vim-runtime',
+      'vim-common',
+      'vim-tiny',
+      'vim-nox',
+      'i3',
+      'i3-wm',
+      'i3lock',
+      'i3status',
+      'fish',
+      'fish-common',
+      'wget',
+      'curl']
