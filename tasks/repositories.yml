@@ -1,21 +1,6 @@
-- name: Create 3rdparty projects directory
-  file:
-    path: "{{ home }}/3rdparty-test"
-    state: directory
-    owner: "{{ user }}"
-    group: "{{ user }}"
-
 - name: Clone github repositories
   git: repo={{ item.git }} dest={{ home }}/{{ item.path }}
   with_items:
     -
-      git: https://github.com/powerline/powerline.git
-      path: 3rdparty-test/powerline
-
-    -
-      git: https://github.com/milkbikis/powerline-shell
-      path: 3rdparty-test/powerline-shell
-
-    -
       git: https://github.com/mviera/dotfiles
-      path: personal-test/dotfiles
+      path: personal/dotfiles

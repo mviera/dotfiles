@@ -10,4 +10,26 @@
   file: path={{ home }}/.{{ item }} src={{ home }}/personal/dotfiles/home/{{ item }} state=link
   with_items:
     - i3
-    - config/fish/fish.config
+    - config/fish/config.fish
+
+- name: Create bin directory
+  file:
+    path: "{{ home }}/bin"
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Symlink i3exit into bin dir
+  file: path={{ home }}/bin/i3exit src={{ home }}/personal/dotfiles/home/i3/i3exit state=link
+
+- name: Symlink lock into bin dir
+  file: path={{ home }}/bin/lock src={{ home }}/personal/dotfiles/home/i3/lock state=link
+
+- name: Symlink switch-display.sh into bin dir
+  file: path={{ home }}/bin/switch-display.sh src={{ home }}/personal/dotfiles/home/i3/switch-display.sh state=link
+
+- name: Symlink screenshot.sh into bin dir
+  file: path={{ home }}/bin/screenshot.sh src={{ home }}/personal/dotfiles/home/i3/screenshot.sh state=link
+
+- name: Symlink toggletouchpad into bin dir
+  file: path={{ home }}/bin/toggletouchpad src={{ home }}/personal/dotfiles/home/i3/toggletouchpad state=link
