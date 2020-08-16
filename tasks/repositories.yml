@@ -4,3 +4,4 @@
     -
       git: git@github.com:mviera/dotfiles.git
       path: personal/dotfiles
+  become_user: mviera
