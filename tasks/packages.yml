@@ -14,4 +14,6 @@
       'fish',
       'fish-common',
       'wget',
-      'curl']
+      'curl',
+      'git',
+    ]

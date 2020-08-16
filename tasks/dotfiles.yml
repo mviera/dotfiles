@@ -1,0 +1,13 @@
+- name: Symlink dotfiles
+  file: path={{ home }}/.{{ item }} src={{ home }}/personal/dotfiles/home/.{{ item }} state=link
+  with_items:
+    - vimrc
+    - bashrc.local
+    - bash_aliases
+    - tmux.conf
+
+- name: Symlink dotfiles
+  file: path={{ home }}/.{{ item }} src={{ home }}/personal/dotfiles/home/{{ item }} state=link
+  with_items:
+    - i3
+    - config/fish/fish.config
