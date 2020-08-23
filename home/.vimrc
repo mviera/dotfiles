@@ -47,6 +47,7 @@ Plug '~/.fzf'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'chr4/nginx.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -69,7 +70,7 @@ if exists('+termguicolors')
 endif
 let g:gruvbox_invert_selection='0'
 let g:terraform_align=1
-let g:terraform_fmt_on_save=1
+let g:terraform_fmt_on_save=0
 
 let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
