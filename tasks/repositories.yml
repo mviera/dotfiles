@@ -3,5 +3,5 @@
   with_items:
     -
       git: git@github.com:mviera/dotfiles.git
-      path: personal/dotfiles
+      path: src/personal/dotfiles
   become_user: mviera

@@ -12,6 +12,10 @@
 #      changed_when: False
 
   tasks:
-    - include: tasks/packages.yml
+#    - include: tasks/packages.yml
     - include: tasks/repositories.yml
     - include: tasks/dotfiles.yml
+
+# TODO: Adds this config to a recipe.
+#sudo apt install pinentry-tty
+#sudo update-alternatives --config pinentry
