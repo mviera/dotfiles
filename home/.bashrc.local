@@ -7,3 +7,6 @@ function _update_ps1() {
 if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
+
+alias kbdes='setxkbmap -model pc105 -layout es'
+alias kbden='setxkbmap -model pc105 -layout us -variant intl'
