@@ -12,4 +12,4 @@ You'll need `ansible` so:
 
 ## Installation
 
-    sudo ansible-pull -U https://github.com/mviera/dotfiles
+    ansible-pull -U https://github.com/mviera/dotfiles
