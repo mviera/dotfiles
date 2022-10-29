@@ -1,3 +1,4 @@
+let python_highlight_all=1
 syntax on
 
 set guicursor=
@@ -48,6 +49,10 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'chr4/nginx.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'nvie/vim-flake8'
 call plug#end()
 
 colorscheme gruvbox
@@ -87,3 +92,5 @@ nnoremap <Leader>pf :Files<CR>
 nnoremap <C-p> :GFiles<CR>
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+au BufNewFile,BufRead *.py set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=79 expandtab autoindent fileformat=unix colorcolumn=80
