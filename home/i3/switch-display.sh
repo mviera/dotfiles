@@ -38,8 +38,8 @@ function switch() {
     if [ $NUM_DISPLAYS -eq 3 ]
     then
         ${XRANDR} --output eDP-1 --off
-        ${XRANDR} --output DP-2 --left-of eDP-1 --auto --primary
-        ${XRANDR} --output HDMI-1 --left-of DP-2 --auto
+        ${XRANDR} --output DP-3 --left-of eDP-1 --auto --primary
+        ${XRANDR} --output HDMI-1 --left-of DP-3 --auto
     fi
 }
 
