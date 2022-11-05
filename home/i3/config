@@ -16,16 +16,16 @@ set $w9 9
 set $w10 10
 
 # Set workspaces to an specific output
-workspace "1: chat" output DP-2
+workspace "1: chat" output DP-3
 workspace "2: terminal" output HDMI-1
-workspace "3: www" output DP-2
-workspace "4: irc" output DP-2
-workspace "5: files" output DP-2
-workspace "6: skype" output DP-2
-workspace 7 output DP-2
-workspace 8 output DP-2
-workspace 9 output DP-2
-workspace 10 output DP-2
+workspace "3: www" output DP-3
+workspace "4: irc" output DP-3
+workspace "5: files" output DP-3
+workspace "6: skype" output DP-3
+workspace 7 output DP-3
+workspace 8 output DP-3
+workspace 9 output DP-3
+workspace 10 output DP-3
 
 # Assign section
 # Use `xprop` (and maybe `xwininfo`) to determine class, title, etc.
@@ -250,9 +250,6 @@ exec --no-startup-id nm-applet
 # gnome-sound-applet
 exec --no-startup-id gnome-sound-applet
 
-# Launch mintupdate-launcher applet/daemon
-exec --no-startup-id mintupdate-launcher
-
 # Lock screen after 10 minutes without any interaction
 exec --no-startup-id xautolock -time 5 -locker 'lock'
 
@@ -266,7 +263,7 @@ exec --no-startup-id dunst -conf ~/.i3/dunstrc
 exec unity-settings-daemon &
 exec google-chrome &
 exec terminator &
-exec terminator -e ssh-add &
+exec terminator -e ~/bin/launch-ssh-agent.sh
 exec gedit &
 exec slack &
 
@@ -289,6 +286,9 @@ exec --no-startup-id xset mouse
 
 # set keyboard layout
 #exec --no-startup-id "setxkbmap -model pc105 -layout us -variant intl -option grp:alt_shift_toggle"
+
+# Nuphy Air 65 keyboard. Swap Left Alt and Super
+exec "setxkbmap -option altwin:swap_lalt_lwin"
 
 set $keyboard_layout Keyboard Layout: (u) US English, (s) Spanish
 mode "$keyboard_layout" {
