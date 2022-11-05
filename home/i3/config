@@ -301,3 +301,6 @@ mode "$keyboard_layout" {
     bindsym Escape mode "default"
 }
 bindsym $mod+shift+Z mode "$keyboard_layout"
+
+# fixes elgato wave:3 mic
+bindsym $mod+Shift+f exec ~/bin/fix-elgato-mic.sh
