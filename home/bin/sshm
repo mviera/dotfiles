@@ -13,7 +13,7 @@ starttmux() {
 
     local hosts=( $HOSTS )
     for host in "${hosts[@]}"; do
-        tmux new-window "ssh -A crononauta@n+$host"
+        tmux new-window "ssh -A -J notifications -l crononauta $host"
     done
     tmux select-pane -t 0
 
