@@ -24,6 +24,7 @@ scrot
 pwgen
 jq
 feh
+xclip
 
 ### docker
 sudo apt install docker docker-compose docker.io

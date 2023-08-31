@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Set VGA monitor to the left of the laptop and primary.
+# Set HDMI monitor to the left of the laptop and primary.
 
 # Private variables
 XRANDR=$(which xrandr)
@@ -35,11 +35,10 @@ function switch() {
 
     NUM_DISPLAYS=$(${XRANDR} | ${GREP} " connected " | ${WC} -l)
 
-    if [ $NUM_DISPLAYS -eq 3 ]
+    if [ $NUM_DISPLAYS -eq 2 ]
     then
         ${XRANDR} --output eDP-1 --off
         ${XRANDR} --output DP-3 --left-of eDP-1 --auto --primary
-        ${XRANDR} --output HDMI-1 --left-of DP-3 --auto
     fi
 }
 

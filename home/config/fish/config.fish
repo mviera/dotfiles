@@ -34,3 +34,8 @@ end
 
 # Custom aliases
 alias llart='ls -lart'
+
+# Generated for envman. Do not edit.
+test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True

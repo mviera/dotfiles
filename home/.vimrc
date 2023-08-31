@@ -90,6 +90,7 @@ nnoremap <Leader>- :vertical resize -5<CR>
 nnoremap <Leader>rp :resize 100<CR>
 nnoremap <Leader>pf :Files<CR>
 nnoremap <C-p> :GFiles<CR>
+nnoremap <C-s> :Ag<CR>
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
