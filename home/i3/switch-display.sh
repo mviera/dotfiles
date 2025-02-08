@@ -38,7 +38,10 @@ function switch() {
     if [ $NUM_DISPLAYS -eq 2 ]
     then
         ${XRANDR} --output eDP-1 --off
-        ${XRANDR} --output DP-3 --left-of eDP-1 --auto --primary
+        ${XRANDR} --output HDMI-1 --mode 2560x1440 --rate 74.97
+    else
+        ${XRANDR} --output HDMI-1 --off
+        ${XRANDR} --output eDP-1 --auto
     fi
 }
 

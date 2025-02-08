@@ -276,6 +276,9 @@ exec --no-startup-id ~/.i3/switch-display.sh
 # Disable touchpad
 exec --no-startup-id ~/.i3/toggletouchpad off
 
+# Connect bluetooth devices
+exec --no-startup-id ~/.i3/bluetooth.sh
+
 ## Delayed AutoStart applications ##
 
 # setting wallpaper
@@ -304,3 +307,6 @@ bindsym $mod+shift+Z mode "$keyboard_layout"
 
 # fixes elgato wave:3 mic
 bindsym $mod+Shift+f exec ~/bin/fix-elgato-mic.sh
+
+# Switch display
+bindsym $mod+Shift+d exec ~/.i3/switch-display.sh

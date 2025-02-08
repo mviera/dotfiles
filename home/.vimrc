@@ -55,6 +55,8 @@ Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 call plug#end()
 
+set t_Co=256
+set t_ut=
 colorscheme gruvbox
 set background=dark
 

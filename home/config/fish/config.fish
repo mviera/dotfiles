@@ -34,6 +34,47 @@ end
 
 # Custom aliases
 alias llart='ls -lart'
+alias t='terraform'
+alias k='kubectl'
+alias kc='kubectl config'
+alias kg='kubectl config get-contexts'
+alias ku='kubectl config use-context'
+alias tinit='terraform init -backend-config="access_key=$AWS_ACCESS_KEY_ID" -backend-config="secret_key=$AWS_SECRET_ACCESS_KEY" -reconfigure'
+alias tplan='source env.sh && terraform fmt && ../../contrib/scripts/pre-run/main.sh && terraform plan'
+#alias tapply='source env.sh && terraform fmt && ~/src/isdin/tf_isdin_platform/contrib/scripts/pre-run/main.sh && terraform apply'
+alias tapply='find ../.. -type f -name '\''*.tf'\'' -exec dirname {} \; | sort -u | xargs -I {} terraform fmt {} && source env.sh && terraform init -upgrade && terraform init -reconfigure && ../../contrib/scripts/pre-run/main.sh && terraform apply'
+
+alias itlogin='\
+  set environment (basename "$PWD") && \
+  ~/src/isdin/tf_isdin_platform/contrib/scripts/configure-sso/check_aws_sso_profile.sh && \
+  export AWS_PROFILE=terraform_isdin_$environment \
+'
+alias itplan='\
+  set environment (basename "$PWD") && \
+  ~/src/isdin/tf_isdin_platform/contrib/scripts/configure-sso/check_aws_sso_profile.sh && \
+  export AWS_PROFILE=terraform_isdin_$environment && \
+  find ~/src/isdin/tf_isdin_platform -type f -name "*.tf" -exec dirname {} \; | sort -u | xargs -I {} terraform fmt {} && \
+  source env.sh && \
+  terraform init -upgrade && \
+  terraform init -reconfigure && \
+  ~/src/isdin/tf_isdin_platform/contrib/scripts/pre-run/main.sh && \
+  terraform plan && \
+  ~/src/isdin/tf_isdin_platform/contrib/scripts/after-run/main.sh \
+'
+
+alias itapply='\
+  set environment (basename "$PWD") && \
+  ~/src/isdin/tf_isdin_platform/contrib/scripts/configure-sso/check_aws_sso_profile.sh && \
+  export AWS_PROFILE=terraform_isdin_$environment && \
+  find ~/src/isdin/tf_isdin_platform -type f -name "*.tf" -exec dirname {} \; | sort -u | xargs -I {} terraform fmt {} && \
+  source env.sh && \
+  terraform init -upgrade && \
+  terraform init -reconfigure && \
+  ~/src/isdin/tf_isdin_platform/contrib/scripts/pre-run/main.sh && \
+  terraform apply && \
+  ~/src/isdin/tf_isdin_platform/contrib/scripts/after-run/main.sh \
+'
+
 
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
