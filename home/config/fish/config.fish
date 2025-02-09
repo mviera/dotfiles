@@ -26,11 +26,10 @@ set -g fish_color_search_match   --background=$selection
 set -g fish_color_selection      --background=$selection
 
 
-# powerline-shell prompt
-function fish_prompt
-    powerline-shell --shell bare $status
-end
-
+# powerline setup config
+set fish_function_path $fish_function_path "/usr/share/powerline/bindings/fish"
+source /usr/share/powerline/bindings/fish/powerline-setup.fish
+powerline-setup
 
 # Custom aliases
 alias llart='ls -lart'
