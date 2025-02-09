@@ -37,6 +37,7 @@
       'python3-pip',
       'git-crypt',
       'apt-transport-https',
+      'pulseaudio',
     ]
 
 #- name: Installs terraform
